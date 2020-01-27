@@ -43,3 +43,4 @@ Inputs are given in command line.
 
 Input templates are included in project path. (i.e. [Input](input.txt))
 ## License
+[MIT](LICENSE.md)
