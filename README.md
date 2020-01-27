@@ -29,7 +29,7 @@ Create directory 'out' inside Automata-Conversion.
 ```
 mkdir out
 ```
-To compile project run the following inside the directory 'preemptive-priority-scheduling':
+To compile project run the following inside the directory 'Automata-Conversion':
 ```
 javac -sourcepath src -d out src/AutomataConversionApplication.java
 ```
