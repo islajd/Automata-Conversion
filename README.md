@@ -25,7 +25,7 @@ git clone https://github.com/islajd/Automata-Conversion.git
 ```
 In our case git has cloned the project in home directory.
 
-Create directory 'out' inside preemptive-priority-scheduling.
+Create directory 'out' inside Automata-Conversion.
 ```
 mkdir out
 ```
