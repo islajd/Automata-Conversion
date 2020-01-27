@@ -41,6 +41,6 @@ java AutomataConversionApplication
 ## Inputs
 Inputs are given in command line.
 
-Input templates are included in project path. (i.e. [Input](input.txt))
+Input templates are included in project path. (i.e. [Input](input))
 ## License
-[MIT](LICENSE.md)
+[MIT](LICENSE)
