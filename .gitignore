@@ -1,4 +1,6 @@
 # Default ignored files
 .idea/
-out/
+
+.out/
+
 AutomataConversion.iml
