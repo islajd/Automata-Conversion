@@ -73,6 +73,7 @@ public class AutmoataConversionController {
         ArrayList<String> finalStates = new ArrayList<>();
         String[] newAlphabet = new String[a.alphabet.length - 1];
         for(String state:a.states){
+            //epsilon closure i pare i gjendje cfardo
             ArrayList<String> eClosure = getEpsillonClosure(a,state,new ArrayList<>());
             if(containFinal(a,eClosure)){
                 finalStates.add(state);
@@ -82,8 +83,10 @@ public class AutmoataConversionController {
                 String alpha = a.alphabet[i];
                 newAlphabet[i] = alpha;
                 for(String e:eClosure){
+                    //gjendjet e arriteshme nga epsilon closure per cdo shkronje alfabeti
                     ArrayList<String> reachable = getReachableStates(a,e,alpha);
                     for(String r:reachable){
+                        //kerkimi i epsilon mbylljes se dyte dhe shtimi ne gjendjet e arritshme
                         ArrayList<String> eClosure2 = getEpsillonClosure(a,r,new ArrayList<>());
                         visited.addAll(eClosure2);
                     }
