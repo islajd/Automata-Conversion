@@ -22,6 +22,7 @@ public class AutmoataConversionController {
         states.add(initial_state);
         q.add(initial_state);
 
+        
         while(!q.isEmpty()){
             ArrayList<String> tmp = q.remove();
 
@@ -75,7 +76,7 @@ public class AutmoataConversionController {
             ArrayList<String> eClosure = getEpsillonClosure(a,state,new ArrayList<>());
             if(containFinal(a,eClosure)){
                 finalStates.add(state);
-            }
+            }// shtim i gjendjeve finale, nese me epsilon kalojne ne gjendje fundore
             for(int i = 0; i < a.alphabet.length-1; i++) {
                 ArrayList<String> visited = new ArrayList<>();
                 String alpha = a.alphabet[i];
