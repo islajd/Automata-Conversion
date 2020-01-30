@@ -18,6 +18,7 @@ public class DFAMinimizationController {
         String start_state;
         //hapi 1, hiqen te gjitha gjendjet e paaritshme
         ArrayList<String> states = this.removeIsolatedStates(a);
+        System.out.print(states);
 
         //Hapi 2,3, plotesimi i tabeles ndihmese ku cdo qelize ka ciftet (p,q)
         // ciftet ku p eshte gjendje fundore dhe q eshte gjendje jo fundore ose e anasjellta shenohen
@@ -35,7 +36,7 @@ public class DFAMinimizationController {
         ArrayList<ArrayList<String>> mergedStates = this.mergeStates(states);
 
         //shtimi i gjendjeve qe nuk kane asnje gjendje ekuivalente
-        for(String s:a.states)
+        for(String s:states)
             if(findGroup(mergedStates,s) == -1)
                 newStates.add(s);
 
@@ -142,12 +143,10 @@ public class DFAMinimizationController {
     private ArrayList<String> removeIsolatedStates(DFA a){
         ArrayList<String> states = new ArrayList<>();
         states.add(a.initial_state);
-        for(String state:a.states){
-            for(Transition t:a.transitionList){
-                String s = t.to;
-                if(!states.contains(s))
-                    states.add(s);
-            }
+        for(Transition t:a.transitionList){
+            String s = t.to;
+            if(!states.contains(s) && !t.from.equals(s))
+                states.add(s);
         }
         return states;
     }
@@ -197,7 +196,7 @@ public class DFAMinimizationController {
                         String qPrime = getReachableState(q,alpha,a);
                         int pPrimeIndex = states.indexOf(pPrime);
                         int qPrimeIndex = states.indexOf(qPrime);
-                        System.out.println(p + "("+i+")" + " vete  " + pPrime +"("+pPrimeIndex + ")" + " // " + q + "(" + j + ")" + " vete " + qPrime + "(" + qPrimeIndex + ")");
+//                        System.out.println(p + "("+i+")" + " vete  " + pPrime +"("+pPrimeIndex + ")" + " // " + q + "(" + j + ")" + " vete " + qPrime + "(" + qPrimeIndex + ")");
                         if(tempTable[pPrimeIndex][qPrimeIndex] == 1) {
                             tempTable[i][j] = 1;
                             tempTable[j][i] = 1;
