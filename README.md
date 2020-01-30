@@ -39,7 +39,7 @@ cd out/
 java AutomataConversionApplication
 ```
 ## Inputs
-Inputs are given in command line.
+Inputs are given in a simple UI.
 
 Input templates are included in project path. (i.e. [Input](input))
 ## License
