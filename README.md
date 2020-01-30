@@ -35,7 +35,6 @@ javac -sourcepath src -d out src/AutomataConversionApplication.java
 ```
 To run the project use the commands below:
 ```
-cd out/
 java AutomataConversionApplication
 ```
 ## Inputs
