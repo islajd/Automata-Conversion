@@ -15,14 +15,13 @@ public class AutmoataConversionController {
         ArrayList<ArrayList<String>> states = new ArrayList<>();
         ArrayList<Transition> transitions = new ArrayList<>();
 
-
         ArrayList<String> initial_state = new ArrayList<>();
         initial_state.add(a.initial_state);
-
+        //shtimi ne radhe i bashkesise me gjendjen fillestare
         states.add(initial_state);
         q.add(initial_state);
 
-        
+        //per sa kohe qe radha ka gjendje te reja
         while(!q.isEmpty()){
             ArrayList<String> tmp = q.remove();
 
@@ -73,7 +72,7 @@ public class AutmoataConversionController {
         ArrayList<String> finalStates = new ArrayList<>();
         String[] newAlphabet = new String[a.alphabet.length - 1];
         for(String state:a.states){
-            //epsilon closure i pare i gjendje cfardo
+            //epsilon closure i pare i nje gjendje cfardo
             ArrayList<String> eClosure = getEpsillonClosure(a,state,new ArrayList<>());
             if(containFinal(a,eClosure)){
                 finalStates.add(state);
@@ -91,7 +90,7 @@ public class AutmoataConversionController {
                         visited.addAll(eClosure2);
                     }
                 }
-                for (String reach : visited) {
+                for(String reach : visited) {
                     transitions.add(new Transition(state, reach, alpha));
                 }
             }
