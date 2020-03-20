@@ -38,8 +38,6 @@ To run the project use the commands below:
 java AutomataConversionApplication
 ```
 ## Inputs
-Inputs are given in a simple UI.
-
 Input templates are included in project path. (i.e. [Input](input))
 ## License
 [MIT](LICENSE)
